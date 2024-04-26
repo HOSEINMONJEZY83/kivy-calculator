@@ -1,0 +1,127 @@
+<MyButtona@Button>:
+    font_size:60
+    background_color:0.0,0.99,0.0,1
+
+<MyButtonb@Button>:
+    font_size:60
+    background_color:0.99,0.99,0.99,1
+
+
+<MyButtonc@Button>:
+    font_size:60
+    background_color:0.99,0.0,0.0,1
+
+<MyGridLayout>:
+    id:calculator
+    display:input
+    rows:7
+    padding:10
+    spacing:10
+
+    BoxLayout:
+        TextInput:
+            id:input
+            font_size:50
+            multiline:False
+            background_color:0.5,0.5,0.5,1
+
+    BoxLayout:
+        spacing:10
+        MyButtona:
+            text:"("
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "("
+        MyButtona:
+            text:")"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += ")"
+        MyButtona:
+            text:"π"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "3.14"
+        MyButtona:
+            text:"/"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "/"
+
+    BoxLayout:
+        spacing:10
+        MyButtona:
+            text:"7"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "7"
+        MyButtona:
+            text:"8"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "8"
+        MyButtona:
+            text:"9"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "9"
+        MyButtona:
+            text:"+"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "+"
+
+    BoxLayout:
+        spacing:10
+        MyButtonb:
+            text:"4"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "4"
+        MyButtonb:
+            text:"5"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "5"
+        MyButtonb:
+            text:"6"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "6"
+        MyButtonb:
+            text:"-"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "-"
+
+    BoxLayout:
+        spacing:10
+        MyButtonb:
+            text:"1"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "1"
+        MyButtonb:
+            text:"2"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "2"
+        MyButtonb:
+            text:"3"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "3"
+        MyButtonb:
+            text:"*"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "*"
+
+    BoxLayout:
+        spacing:10
+        MyButtonc:
+            text:"clear"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text = ""
+        MyButtonc:
+            text:"0"
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "0"
+        MyButtonc:
+            text:"."
+            color : 0.99,0.99,0.99,1
+            on_press: input.text += "."
+        MyButtonc:
+            text:"undo"
+            color : 0.99,0.99,0.99,1
+            on_press: calculator.undo()
+
+    BoxLayout:
+        MyButtonc:
+            text:"="
+            color : 0.99,0.99,0.99,1
+            on_press: calculator.calc(input.text)
